@@ -1,0 +1,67 @@
+.wrapper{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.wrapper button {
+    padding: 10px 20px;
+    background: rgb(6, 43, 43);
+    color: lightsalmon;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none; /* Remove default button border */
+    transition: background 0.3s, font-size 0.3s, transform 0.3s, box-shadow 0.3s; /* Add transitions for smooth effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    outline: none; /* Remove default outline */
+}
+
+.wrapper button:hover {
+    background: black;
+    font-size: 20px;
+    transform: translateY(-2px); /* Slight lift effect on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1); /* Enhance shadow on hover */
+}
+
+.wrapper button.active {
+    background: linear-gradient(135deg, lightsalmon 0%, salmon 100%); /* Add a gradient background when active */
+    color: rgb(6, 43, 43);
+    font-size: 22px;
+    border: 1px solid rgb(6, 43, 43);
+    transform: translateY(0); /* Reset the lift effect */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Add a deeper shadow when active */
+}
+
+.wrapper button:focus {
+    box-shadow: 0 0 0 3px rgba(6, 43, 43, 0.4); /* Add a focus ring for accessibility */
+}
+
+.Accordian{
+    width: 500px;
+}
+
+.item{
+    background: rgb(6, 43, 43);
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.title{
+    color: lightsalmon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+}
+
+.content{
+    color: lightblue;
+    height: auto;
+}
