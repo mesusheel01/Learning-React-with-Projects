@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+/* button{
+    position: relative;    
+    left: 60vh;
+} */
+button{
+    color: #000000;
+    margin: 6px;
+    padding: 10px 10px;  
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 10px;
+}
+button:hover{
+    background: teal;
+}
