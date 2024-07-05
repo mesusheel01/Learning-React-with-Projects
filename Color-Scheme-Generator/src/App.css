@@ -15,5 +15,6 @@ button{
     font-size: 10px;
 }
 button:hover{
-    background: teal;
+    background: #000;
+    color: white;
 }

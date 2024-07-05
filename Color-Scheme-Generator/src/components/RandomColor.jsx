@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../App.css";
 //
 
@@ -6,13 +6,18 @@ const RandomColor = () => {
   const [type, setType] = useState("hex");
   const [color, setColor] = useState("#000000");
 
+  useEffect(()=>{
+    type === 'rgb'? rgbColor() : hexColor()
+  },[type])
+
+
+
+
 
   const randomUtility=(len)=>{
     return Math.floor(Math.random()*len)
   }
-  const generateColor =()=>{
-
-    if(type === 'hex'){
+  const hexColor = ()=>{
         // #242424
         const hex = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F']
         let hexColor = '#';
@@ -21,14 +26,17 @@ const RandomColor = () => {
         }
         console.log(hexColor)
         setColor(hexColor)
-    }else if(type === 'rgb'){
-        const r = randomUtility(256);
-        const g = randomUtility(256);
-        const b = randomUtility(256);
-        const col = `rgb(${r},${g},${b})`
-        console.log(col)
-        setColor(col)
-    }
+  }
+  const rgbColor = ()=>{
+    const r = randomUtility(256);
+    const g = randomUtility(256);
+    const b = randomUtility(256);
+    const col = `rgb(${r},${g},${b})`
+    console.log(col)
+    setColor(col)
+  }
+  const generateColor =()=>{
+    type === 'hex'? hexColor():rgbColor()
   }
 
 
@@ -52,7 +60,6 @@ const RandomColor = () => {
             display:'flex',
             justifyContent:'center',
             alignItems: 'center',
-            color: 'beige',
             fontSize: '60px',
             marginTop: '50px',
             flexDirection:'col',
@@ -60,7 +67,7 @@ const RandomColor = () => {
         }}
       >
         <h3>{type === 'rgb' ? 'RGB Color' : 'HEX Color'} </h3>
-        <h6>{color}</h6>
+        <h3>{color}</h3>
       </div>
     </div>
   );
